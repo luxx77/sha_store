@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHA Store — Your Next Favorite Book</title>
+  <meta name="description" content="SHA Store is an independent online bookstore. Discover bestsellers, hidden gems, and curated collections delivered to your door." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#" class="logo">📚 SHA<span>Store</span></a>
+      <nav class="nav-links">
+        <a href="#featured">Featured</a>
+        <a href="#categories">Categories</a>
+        <a href="#newsletter">Newsletter</a>
+      </nav>
+      <a href="#featured" class="btn btn-small">Shop Now</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">Independent bookstore</p>
+        <h1>Find a story worth getting lost in.</h1>
+        <p class="lead">
+          Handpicked bestsellers, timeless classics, and undiscovered gems —
+          delivered straight to your doorstep. Reading made effortless.
+        </p>
+        <div class="hero-actions">
+          <a href="#featured" class="btn">Browse the shelves</a>
+          <a href="#newsletter" class="btn btn-ghost">Join the club</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>12k+</strong><span>Titles</span></div>
+          <div><strong>50k+</strong><span>Happy readers</span></div>
+          <div><strong>4.9★</strong><span>Avg rating</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="book book-1">A</div>
+        <div class="book book-2">B</div>
+        <div class="book book-3">C</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="featured" class="section">
+    <div class="container">
+      <h2 class="section-title">Featured this month</h2>
+      <p class="section-sub">Staff favorites our readers can't put down.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="cover cover-a">The Silent Tide</div>
+          <h3>The Silent Tide</h3>
+          <p class="author">by Mara Quinn</p>
+          <div class="card-foot"><span class="price">$18.00</span><button class="btn btn-small">Add to cart</button></div>
+        </article>
+        <article class="card">
+          <div class="cover cover-b">Midnight Code</div>
+          <h3>Midnight Code</h3>
+          <p class="author">by Adrian Vex</p>
+          <div class="card-foot"><span class="price">$22.50</span><button class="btn btn-small">Add to cart</button></div>
+        </article>
+        <article class="card">
+          <div class="cover cover-c">Garden of Glass</div>
+          <h3>Garden of Glass</h3>
+          <p class="author">by Lila Brooks</p>
+          <div class="card-foot"><span class="price">$15.99</span><button class="btn btn-small">Add to cart</button></div>
+        </article>
+        <article class="card">
+          <div class="cover cover-d">Northbound</div>
+          <h3>Northbound</h3>
+          <p class="author">by Theo Hale</p>
+          <div class="card-foot"><span class="price">$19.00</span><button class="btn btn-small">Add to cart</button></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="categories" class="section section-muted">
+    <div class="container">
+      <h2 class="section-title">Browse by category</h2>
+      <p class="section-sub">Whatever mood you're in, there's a shelf for it.</p>
+      <div class="cats">
+        <a class="cat">📖 Fiction</a>
+        <a class="cat">🚀 Sci-Fi</a>
+        <a class="cat">🕵️ Mystery</a>
+        <a class="cat">💛 Romance</a>
+        <a class="cat">🧠 Non-Fiction</a>
+        <a class="cat">👧 Children</a>
+        <a class="cat">📜 History</a>
+        <a class="cat">🎨 Art & Design</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="newsletter" class="section newsletter">
+    <div class="container newsletter-inner">
+      <div>
+        <h2>Join the reading club</h2>
+        <p>Get monthly recommendations, early access to new releases, and 10% off your first order.</p>
+      </div>
+      <form class="news-form" onsubmit="event.preventDefault(); this.reset(); alert('Thanks for subscribing!');">
+        <input type="email" placeholder="you@example.com" required />
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="logo">📚 SHA<span>Store</span></span>
+      <p>© 2026 SHA Store. Made for book lovers.</p>
+    </div>
+  </footer>
+</body>
+</html>
