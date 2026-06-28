@@ -1,120 +1,416 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SHA Store — Your Next Favorite Book</title>
-  <meta name="description" content="SHA Store is an independent online bookstore. Discover bestsellers, hidden gems, and curated collections delivered to your door." />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Şa Kitaplar — Книги в Ашхабаде</title>
+  <meta name="description" content="Şa Kitaplar — онлайн книжный магазин в Ашхабаде. Книги на русском, турецком и английском. В наличии и под заказ 5–10 дней.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Şa Kitaplar — Книги в Ашхабаде">
+  <meta property="og:description" content="Онлайн книжный магазин в Ашхабаде. RU · TR · EN книги. В наличии и под заказ 5–10 дней. Подберём книгу по настроению 💜">
+  <meta property="og:image" content="images/img-029.jpg">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#6B3FA0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a href="#" class="logo">📚 SHA<span>Store</span></a>
-      <nav class="nav-links">
-        <a href="#featured">Featured</a>
-        <a href="#categories">Categories</a>
-        <a href="#newsletter">Newsletter</a>
+
+  <!-- ── SCROLL PROGRESS ── -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ── HEADER ── -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="logo-link" aria-label="Şa Kitaplar — на главную">
+        <img src="images/img-000.jpg" alt="Şa Kitaplar" class="logo">
+        <span class="logo-name">Şa Kitaplar</span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Основная навигация">
+        <a href="#about"      class="nav__link">О нас</a>
+        <a href="#categories" class="nav__link">Книги</a>
+        <a href="#gallery"    class="nav__link">Галерея</a>
+        <a href="#reviews"    class="nav__link">Отзывы</a>
+        <a href="#order"      class="nav__link">Как заказать</a>
+        <a href="#contact"    class="nav__link nav__link--cta">Связаться</a>
       </nav>
-      <a href="#featured" class="btn btn-small">Shop Now</a>
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+    <div class="nav-overlay" id="navOverlay"></div>
   </header>
 
+  <!-- ── HERO ── -->
   <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Independent bookstore</p>
-        <h1>Find a story worth getting lost in.</h1>
-        <p class="lead">
-          Handpicked bestsellers, timeless classics, and undiscovered gems —
-          delivered straight to your doorstep. Reading made effortless.
+    <div class="hero__bg-dots" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <span class="hero__badge">Книги в Ашхабаде</span>
+        <h1 class="hero__title">Подберём книгу<br><em>по настроению</em></h1>
+        <p class="hero__desc">
+          В наличии и под заказ <strong>5–10 дней</strong><br>
+          Русские · Турецкие · Английские книги
         </p>
-        <div class="hero-actions">
-          <a href="#featured" class="btn">Browse the shelves</a>
-          <a href="#newsletter" class="btn btn-ghost">Join the club</a>
+        <div class="hero__cta">
+          <a href="https://www.instagram.com/sha_bookstore" target="_blank" rel="noopener" class="btn btn--primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            Написать в Instagram
+          </a>
+          <a href="tel:+99362533189" class="btn btn--outline">+993 62 533 189</a>
         </div>
-        <div class="hero-stats">
-          <div><strong>12k+</strong><span>Titles</span></div>
-          <div><strong>50k+</strong><span>Happy readers</span></div>
-          <div><strong>4.9★</strong><span>Avg rating</span></div>
+        <a href="#about" class="hero__scroll-hint" aria-label="Прокрутите вниз" id="scrollHint">
+          <span>прокрутите</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </a>
+
+        <div class="hero__stats">
+          <div class="stat">
+            <span class="stat__num" data-count="11300">0</span>
+            <span class="stat__label">подписчиков</span>
+          </div>
+          <div class="stat__divider"></div>
+          <div class="stat">
+            <span class="stat__num" data-count="484">0</span>
+            <span class="stat__label">публикации</span>
+          </div>
+          <div class="stat__divider"></div>
+          <div class="stat">
+            <span class="stat__num">RU·TR·EN</span>
+            <span class="stat__label">языки книг</span>
+          </div>
         </div>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="book book-1">A</div>
-        <div class="book book-2">B</div>
-        <div class="book book-3">C</div>
+
+      <div class="hero__image-wrap">
+        <div class="hero__img-deco" aria-hidden="true"></div>
+        <img src="images/img-049.jpg" alt="Şa Kitaplar — книги с любовью" class="hero__img">
+        <div class="hero__float-card">
+          <span class="hero__float-icon">✦</span>
+          <span>Подберём книгу по настроению</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ── FEATURES BAR ── -->
+  <div class="features-bar">
+    <div class="container features-bar__inner">
+      <div class="feat-pill">
+        <span class="feat-pill__icon">📚</span>
+        <span>В наличии и под заказ</span>
+      </div>
+      <div class="feat-pill__sep" aria-hidden="true"></div>
+      <div class="feat-pill">
+        <span class="feat-pill__icon">✈️</span>
+        <span>Доставка <strong>5–10 дней</strong></span>
+      </div>
+      <div class="feat-pill__sep" aria-hidden="true"></div>
+      <div class="feat-pill">
+        <span class="feat-pill__icon">🌍</span>
+        <span>Книги RU · TR · EN</span>
+      </div>
+      <div class="feat-pill__sep" aria-hidden="true"></div>
+      <div class="feat-pill">
+        <span class="feat-pill__icon">💜</span>
+        <span>Подберём по настроению</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ABOUT ── -->
+  <section class="about" id="about">
+    <div class="container about__inner">
+      <div class="about__images">
+        <img src="images/img-028.jpg" alt="Фирменная упаковка Şa Kitaplar" class="about__img about__img--main">
+        <img src="images/img-039.jpg" alt="Книга Louise Hay — Şa Kitaplar" class="about__img about__img--secondary">
+        <div class="about__deco-circle" aria-hidden="true"></div>
+      </div>
+      <div class="about__content">
+        <span class="section-label">О нас</span>
+        <h2>Твой книжный<br>в Ашхабаде</h2>
+        <p>Şa Kitaplar — это онлайн-магазин, где каждая книга подобрана с душой. Мы помогаем найти именно ту книгу, которая нужна прямо сейчас — для вдохновения, роста или просто удовольствия от чтения.</p>
+        <p>Работаем с книгами на трёх языках: русском, турецком и английском. Любую книгу можно заказать — срок доставки 5–10 дней с фирменной упаковкой.</p>
+        <ul class="about__features">
+          <li><span class="feat-icon">✦</span>В наличии и под заказ</li>
+          <li><span class="feat-icon">✦</span>Доставка 5–10 дней</li>
+          <li><span class="feat-icon">✦</span>Книги RU / TR / EN</li>
+          <li><span class="feat-icon">✦</span>Подберём по настроению</li>
+        </ul>
+        <div class="about__mascot">
+          <img src="images/img-040.jpg" alt="Şa Kitaplar — книги открывают миры" loading="lazy">
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="featured" class="section">
+  <!-- ── CATEGORIES ── -->
+  <section class="categories" id="categories">
     <div class="container">
-      <h2 class="section-title">Featured this month</h2>
-      <p class="section-sub">Staff favorites our readers can't put down.</p>
-      <div class="grid">
-        <article class="card">
-          <div class="cover cover-a">The Silent Tide</div>
-          <h3>The Silent Tide</h3>
-          <p class="author">by Mara Quinn</p>
-          <div class="card-foot"><span class="price">$18.00</span><button class="btn btn-small">Add to cart</button></div>
-        </article>
-        <article class="card">
-          <div class="cover cover-b">Midnight Code</div>
-          <h3>Midnight Code</h3>
-          <p class="author">by Adrian Vex</p>
-          <div class="card-foot"><span class="price">$22.50</span><button class="btn btn-small">Add to cart</button></div>
-        </article>
-        <article class="card">
-          <div class="cover cover-c">Garden of Glass</div>
-          <h3>Garden of Glass</h3>
-          <p class="author">by Lila Brooks</p>
-          <div class="card-foot"><span class="price">$15.99</span><button class="btn btn-small">Add to cart</button></div>
-        </article>
-        <article class="card">
-          <div class="cover cover-d">Northbound</div>
-          <h3>Northbound</h3>
-          <p class="author">by Theo Hale</p>
-          <div class="card-foot"><span class="price">$19.00</span><button class="btn btn-small">Add to cart</button></div>
-        </article>
+      <div class="section-header">
+        <span class="section-label">Коллекция</span>
+        <h2>Книги на любой вкус</h2>
+        <p class="section-desc">От психологии до детских сказок — всё в одном месте</p>
+      </div>
+      <div class="categories__grid">
+        <div class="cat-card">
+          <div class="cat-card__img-wrap">
+            <img src="images/img-047.jpg" alt="Психология и саморазвитие" loading="lazy">
+          </div>
+          <div class="cat-card__body">
+            <h3>Психология и саморазвитие</h3>
+            <p>Книги для роста, мотивации и внутренних открытий</p>
+          </div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card__img-wrap">
+            <img src="images/img-046.jpg" alt="Художественная литература" loading="lazy">
+          </div>
+          <div class="cat-card__body">
+            <h3>Художественная литература</h3>
+            <p>Романы, истории и классика на любом языке</p>
+          </div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card__img-wrap">
+            <img src="images/img-036.jpg" alt="Детские и подростковые книги" loading="lazy">
+          </div>
+          <div class="cat-card__body">
+            <h3>Детские и подростковые</h3>
+            <p>Лучшие книги для детей от 10 лет и старше</p>
+          </div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card__img-wrap">
+            <img src="images/img-037.jpg" alt="Türkçe Kitaplar" loading="lazy">
+          </div>
+          <div class="cat-card__body">
+            <h3>Türkçe Kitaplar</h3>
+            <p>Турецкие книги — психология, романы, мотивация</p>
+          </div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card__img-wrap">
+            <img src="images/img-024.jpg" alt="Бестселлеры" loading="lazy">
+          </div>
+          <div class="cat-card__body">
+            <h3>Бестселлеры</h3>
+            <p>Самые популярные книги этого сезона</p>
+          </div>
+        </div>
+        <div class="cat-card cat-card--cta">
+          <div class="cat-card__body">
+            <span class="cat-cta-icon">✦</span>
+            <h3>Не нашли нужную книгу?</h3>
+            <p>Напишите нам — подберём или закажем специально для вас</p>
+            <a href="https://www.instagram.com/sha_bookstore" target="_blank" rel="noopener" class="btn cat-btn">Написать нам</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="categories" class="section section-muted">
+  <!-- ── GALLERY ── -->
+  <section class="gallery" id="gallery">
     <div class="container">
-      <h2 class="section-title">Browse by category</h2>
-      <p class="section-sub">Whatever mood you're in, there's a shelf for it.</p>
-      <div class="cats">
-        <a class="cat">📖 Fiction</a>
-        <a class="cat">🚀 Sci-Fi</a>
-        <a class="cat">🕵️ Mystery</a>
-        <a class="cat">💛 Romance</a>
-        <a class="cat">🧠 Non-Fiction</a>
-        <a class="cat">👧 Children</a>
-        <a class="cat">📜 History</a>
-        <a class="cat">🎨 Art & Design</a>
+      <div class="section-header">
+        <span class="section-label">Галерея</span>
+        <h2>Каждая книга — это эстетика</h2>
+      </div>
+      <div class="gallery__grid" id="galleryGrid">
+        <div class="gallery__item gallery__item--tall" data-lb="images/img-049.jpg" data-lb-alt="Şa Kitaplar — в книжном магазине">
+          <img src="images/img-049.jpg" alt="Şa Kitaplar — в книжном магазине" loading="lazy">
+          <div class="gallery__item-overlay"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+        </div>
+        <div class="gallery__item" data-lb="images/img-025.jpg" data-lb-alt="Подсолнухи и книги">
+          <img src="images/img-025.jpg" alt="Подсолнухи и книги" loading="lazy">
+          <div class="gallery__item-overlay"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+        </div>
+        <div class="gallery__item" data-lb="images/img-026.jpg" data-lb-alt="Kendine Hoş Geldin — с кофе и ромашками">
+          <img src="images/img-026.jpg" alt="Kendine Hoş Geldin — с кофе и ромашками" loading="lazy">
+          <div class="gallery__item-overlay"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+        </div>
+        <div class="gallery__item" data-lb="images/img-029.jpg" data-lb-alt="Manifest Günlüğü на фирменной ткани">
+          <img src="images/img-029.jpg" alt="Manifest Günlüğü на фирменной ткани" loading="lazy">
+          <div class="gallery__item-overlay"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+        </div>
+        <div class="gallery__item" data-lb="images/img-027.jpg" data-lb-alt="Вечернее чтение при свете лампы">
+          <img src="images/img-027.jpg" alt="Вечернее чтение при свете лампы" loading="lazy">
+          <div class="gallery__item-overlay"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+        </div>
+        <div class="gallery__item" data-lb="images/img-035.jpg" data-lb-alt="Фирменный пакет Sha Book Store">
+          <img src="images/img-035.jpg" alt="Фирменный пакет Sha Book Store" loading="lazy">
+          <div class="gallery__item-overlay"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+        </div>
+        <div class="gallery__item" data-lb="images/img-046.jpg" data-lb-alt="Яркая книга на фиолетовом фоне">
+          <img src="images/img-046.jpg" alt="Яркая книга на фиолетовом фоне" loading="lazy">
+          <div class="gallery__item-overlay"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="newsletter" class="section newsletter">
-    <div class="container newsletter-inner">
-      <div>
-        <h2>Join the reading club</h2>
-        <p>Get monthly recommendations, early access to new releases, and 10% off your first order.</p>
+  <!-- ── REVIEWS ── -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Отзывы</span>
+        <h2>Что говорят читатели</h2>
+        <p class="section-desc">11.3K читателей не могут ошибаться</p>
       </div>
-      <form class="news-form" onsubmit="event.preventDefault(); this.reset(); alert('Thanks for subscribing!');">
-        <input type="email" placeholder="you@example.com" required />
-        <button type="submit" class="btn">Subscribe</button>
-      </form>
+      <div class="reviews__grid">
+        <div class="review-card">
+          <div class="review__stars">★★★★★</div>
+          <p class="review__text">«Заказала книгу под заказ — пришла за 7 дней, упаковка просто загляденье! Буду заказывать ещё 💜»</p>
+          <div class="review__author">
+            <div class="review__avatar" style="--av-color:#9B6DCF">А</div>
+            <div>
+              <span class="review__name">Айнур М.</span>
+              <span class="review__via">через Instagram Direct</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card review-card--accent">
+          <div class="review__stars">★★★★★</div>
+          <p class="review__text">«Наконец-то нашла столько турецких книг в Ашхабаде! Отвечают быстро, всегда помогут с выбором»</p>
+          <div class="review__author">
+            <div class="review__avatar" style="--av-color:#C9A84C">З</div>
+            <div>
+              <span class="review__name">Зарина Р.</span>
+              <span class="review__via">через Instagram Direct</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review__stars">★★★★★</div>
+          <p class="review__text">«Попросила подобрать что-нибудь по настроению — угадали идеально. Теперь постоянный клиент! 📚»</p>
+          <div class="review__author">
+            <div class="review__avatar" style="--av-color:#F2C4CE; color:#6B3FA0">Г</div>
+            <div>
+              <span class="review__name">Гульнара Б.</span>
+              <span class="review__via">через Instagram Direct</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reviews__ig-cta">
+        <p>Больше отзывов в нашем Instagram</p>
+        <a href="https://www.instagram.com/sha_bookstore" target="_blank" rel="noopener" class="btn btn--outline">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          @sha_bookstore
+        </a>
+      </div>
     </div>
   </section>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <span class="logo">📚 SHA<span>Store</span></span>
-      <p>© 2026 SHA Store. Made for book lovers.</p>
+  <!-- ── HOW TO ORDER ── -->
+  <section class="order" id="order">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Как заказать</span>
+        <h2>Всё просто</h2>
+        <p class="section-desc order__subdesc">Три простых шага до вашей книги</p>
+      </div>
+      <div class="order__steps">
+        <div class="step">
+          <div class="step__num">01</div>
+          <h3>Напишите нам</h3>
+          <p>Откройте Instagram и напишите в Direct: «Хочу книгу» или название книги, которую ищете</p>
+        </div>
+        <div class="step__arrow" aria-hidden="true">
+          <svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M0 8h28M22 2l8 6-8 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="step">
+          <div class="step__num">02</div>
+          <h3>Мы подберём</h3>
+          <p>Не знаете что выбрать? Расскажите настроение — мы порекомендуем идеальную книгу для вас</p>
+        </div>
+        <div class="step__arrow" aria-hidden="true">
+          <svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M0 8h28M22 2l8 6-8 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="step">
+          <div class="step__num">03</div>
+          <h3>Получите книгу</h3>
+          <p>Книга из наличия — сразу. Под заказ — доставка 5–10 дней с красивой фирменной упаковкой</p>
+        </div>
+      </div>
+      <div class="order__cta-wrap">
+        <a href="https://www.instagram.com/sha_bookstore" target="_blank" rel="noopener" class="btn btn--light btn--large">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          Написать в @sha_bookstore
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="contact" id="contact">
+    <div class="container contact__inner">
+      <div class="contact__content">
+        <span class="section-label">Контакты</span>
+        <h2>Готовы найти<br>вашу книгу?</h2>
+        <blockquote class="contact__quote">«Книги открывают миры»</blockquote>
+        <p class="contact__text">Напишите нам в Instagram — мы ответим быстро и поможем найти то, что вы ищёте.</p>
+        <div class="contact__links">
+          <a href="https://www.instagram.com/sha_bookstore" target="_blank" rel="noopener" class="btn btn--primary btn--large">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            @sha_bookstore
+          </a>
+          <a href="tel:+99362533189" class="btn btn--outline btn--large">+993 62 533 189</a>
+        </div>
+      </div>
+      <div class="contact__image">
+        <img src="images/img-047.jpg" alt="Kendimden Özür Dilerim — книга и подсолнух">
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#" class="footer__logo-link" aria-label="Наверх">
+        <img src="images/img-000.jpg" alt="Şa Kitaplar" class="footer__logo">
+      </a>
+      <div class="footer__center">
+        <p class="footer__name">Şa Kitaplar</p>
+        <p class="footer__sub">Книги в Ашхабаде · RU · TR · EN</p>
+        <div class="footer__links">
+          <a href="https://www.instagram.com/sha_bookstore" target="_blank" rel="noopener">@sha_bookstore</a>
+          <span aria-hidden="true">·</span>
+          <a href="tel:+99362533189">+993 62 533 189</a>
+        </div>
+      </div>
+      <p class="footer__copy">© 2024 Şa Kitaplar</p>
     </div>
   </footer>
+
+  <!-- ── LIGHTBOX ── -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фото">
+    <button class="lightbox__close" id="lbClose" aria-label="Закрыть">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <button class="lightbox__nav lightbox__prev" id="lbPrev" aria-label="Предыдущее">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="lightbox__img-wrap">
+      <img id="lbImg" src="" alt="">
+    </div>
+    <button class="lightbox__nav lightbox__next" id="lbNext" aria-label="Следующее">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+    <div class="lightbox__counter" id="lbCounter"></div>
+  </div>
+
+  <!-- ── FLOATING BUTTONS ── -->
+  <a href="https://www.instagram.com/sha_bookstore" target="_blank" rel="noopener" class="float-ig" id="floatIg" aria-label="Написать в Instagram">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+  </a>
+
+  <button class="back-to-top" id="backToTop" aria-label="Наверх">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
 </body>
 </html>
